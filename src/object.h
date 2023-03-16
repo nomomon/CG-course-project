@@ -12,19 +12,21 @@
 class Object;
 typedef std::shared_ptr<Object> ObjectPtr;
 
-class Object {
- public:
-  Material material;
+class Object
+{
+public:
+    Material material;
 
-  virtual ~Object() = default;
+    virtual ~Object() = default;
 
-  virtual Hit intersect(Ray const &ray) = 0;  // must be implemented
-                                              // in derived class
+    virtual Hit intersect(Ray const &ray) = 0; // must be implemented
+                                               // in derived class
 
-  virtual Vector toUV(Point const &hit) {
-    // bogus implementation
-    return Vector{};
-  }
+    virtual Vector toUV(Point const &hit)
+    {
+        // bogus implementation
+        return Vector{};
+    }
 };
 
 #endif

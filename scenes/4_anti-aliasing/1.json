@@ -1,26 +1,53 @@
 {
-    "Eye": [200, 200, 1000],
+    "Eye": [
+        200,
+        200,
+        1000
+    ],
     "Shadows": true,
     "SuperSamplingFactor": 2,
     "Lights": [
         {
-            "position": [-200, 600, 1500],
-            "color": [0.4, 0.4, 0.8]
+            "position": [
+                -200,
+                600,
+                1500
+            ],
+            "color": [
+                0.4,
+                0.4,
+                0.8
+            ]
         },
         {
-            "position": [600, 600, 1500],
-            "color": [0.8, 0.8, 0.4]
+            "position": [
+                600,
+                600,
+                1500
+            ],
+            "color": [
+                0.8,
+                0.8,
+                0.4
+            ]
         }
     ],
     "Objects": [
         {
             "type": "sphere",
             "comment": "Blue sphere",
-            "position": [90, 320, 100],
+            "position": [
+                90,
+                320,
+                100
+            ],
             "radius": 50,
-            "material":
-            {
-                "color": [0.0, 0.0, 1.0],
+            "material": {
+                "color": [
+                    0.0,
+                    0.0,
+                    1.0
+                ],
                 "ka": 0.2,
                 "kd": 0.7,
                 "ks": 0.5,
@@ -30,11 +57,18 @@
         {
             "type": "sphere",
             "comment": "Green sphere",
-            "position": [210, 270, 300],
+            "position": [
+                210,
+                270,
+                300
+            ],
             "radius": 50,
-            "material":
-            {
-                "color": [0.0, 1.0, 0.0],
+            "material": {
+                "color": [
+                    0.0,
+                    1.0,
+                    0.0
+                ],
                 "ka": 0.2,
                 "kd": 0.3,
                 "ks": 0.5,
@@ -44,11 +78,18 @@
         {
             "type": "sphere",
             "comment": "Red sphere",
-            "position": [290, 170, 150],
+            "position": [
+                290,
+                170,
+                150
+            ],
             "radius": 50,
-            "material":
-            {
-                "color": [1.0, 0.0, 0.0],
+            "material": {
+                "color": [
+                    1.0,
+                    0.0,
+                    0.0
+                ],
                 "ka": 0.2,
                 "kd": 0.7,
                 "ks": 0.8,
@@ -58,11 +99,18 @@
         {
             "type": "sphere",
             "comment": "Yellow sphere",
-            "position": [140, 220, 400],
+            "position": [
+                140,
+                220,
+                400
+            ],
             "radius": 50,
-            "material":
-            {
-                "color": [1.0, 0.8, 0.0],
+            "material": {
+                "color": [
+                    1.0,
+                    0.8,
+                    0.0
+                ],
                 "ka": 0.2,
                 "kd": 0.8,
                 "ks": 0.0,
@@ -72,11 +120,18 @@
         {
             "type": "sphere",
             "comment": "Orange sphere",
-            "position": [110, 130, 200],
+            "position": [
+                110,
+                130,
+                200
+            ],
             "radius": 50,
-            "material":
-            {
-                "color": [1.0, 0.5, 0.0],
+            "material": {
+                "color": [
+                    1.0,
+                    0.5,
+                    0.0
+                ],
                 "ka": 0.2,
                 "kd": 0.8,
                 "ks": 0.5,
@@ -86,11 +141,18 @@
         {
             "type": "sphere",
             "comment": "Grey sphere1",
-            "position": [200, 200, -1000],
+            "position": [
+                200,
+                200,
+                -1000
+            ],
             "radius": 1000,
-            "material":
-            {
-                "color": [0.4, 0.4, 0.4],
+            "material": {
+                "color": [
+                    0.4,
+                    0.4,
+                    0.4
+                ],
                 "ka": 0.2,
                 "kd": 0.8,
                 "ks": 0,

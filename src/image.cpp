@@ -31,34 +31,38 @@ unsigned Image::size() const { return d_width * d_height; }
 // useful for texture access
 Color const &Image::colorAt(float x, float y) const { return d_pixels.at(findex(x, y)); }
 
-void Image::write_png(std::string const &filename) const {
-  vector<unsigned char> image;
-  image.reserve(size() * 4);  // reserves size (less allocations)
-  for (Color pixel : d_pixels) {
-    image.push_back(static_cast<unsigned char>(pixel.r * 255.0));
-    image.push_back(static_cast<unsigned char>(pixel.g * 255.0));
-    image.push_back(static_cast<unsigned char>(pixel.b * 255.0));
-    image.push_back(255);  // alpha is always 1
-  }
+void Image::write_png(std::string const &filename) const
+{
+    vector<unsigned char> image;
+    image.reserve(size() * 4); // reserves size (less allocations)
+    for (Color pixel : d_pixels)
+    {
+        image.push_back(static_cast<unsigned char>(pixel.r * 255.0));
+        image.push_back(static_cast<unsigned char>(pixel.g * 255.0));
+        image.push_back(static_cast<unsigned char>(pixel.b * 255.0));
+        image.push_back(255); // alpha is always 1
+    }
 
-  lodepng::encode(filename, image, d_width, d_height);
+    lodepng::encode(filename, image, d_width, d_height);
 }
 
-void Image::read_png(std::string const &filename) {
-  vector<unsigned char> image;
-  lodepng::decode(image, d_width, d_height, filename);
-  d_pixels.reserve(size());
+void Image::read_png(std::string const &filename)
+{
+    vector<unsigned char> image;
+    lodepng::decode(image, d_width, d_height, filename);
+    d_pixels.reserve(size());
 
-  auto imgIter = image.begin();
-  while (imgIter != image.end()) {
-    double r = (*imgIter) / 255.0;
-    ++imgIter;
-    double g = (*imgIter) / 255.0;
-    ++imgIter;
-    double b = (*imgIter) / 255.0;
-    ++imgIter;
-    // Ignore Alpha
-    ++imgIter;
-    d_pixels.push_back(Color(r, g, b));
-  }
+    auto imgIter = image.begin();
+    while (imgIter != image.end())
+    {
+        double r = (*imgIter) / 255.0;
+        ++imgIter;
+        double g = (*imgIter) / 255.0;
+        ++imgIter;
+        double b = (*imgIter) / 255.0;
+        ++imgIter;
+        // Ignore Alpha
+        ++imgIter;
+        d_pixels.push_back(Color(r, g, b));
+    }
 }
