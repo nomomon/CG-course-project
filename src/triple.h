@@ -78,6 +78,10 @@ public:
     Triple normalized() const; // normalized COPY
     void normalize();          // normalize THIS
 
+    Triple rotate(Triple const &r) const;
+    Triple scale(Triple const &s) const;
+    Triple translate(Triple const &t) const;
+
     // --- Color functions ---------------------------------------------------------
 
     void set(double f);                  // set all values to f

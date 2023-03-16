@@ -121,6 +121,35 @@ void Triple::normalize()
     z *= invlen;
 }
 
+Triple Triple::rotate(Triple const &r) const
+{
+    double cosx = cos(r.x);
+    double cosy = cos(r.y);
+    double cosz = cos(r.z);
+
+    double sinx = sin(r.x);
+    double siny = sin(r.y);
+    double sinz = sin(r.z);
+
+    // rotate around x-axis
+    double y1 = y * cosx - z * sinx;
+    double z1 = y * sinx + z * cosx;
+
+    // rotate around y-axis
+    double x2 = x * cosy + z1 * siny;
+    double z2 = -x * siny + z1 * cosy;
+
+    // rotate around z-axis
+    double x3 = x2 * cosz - y1 * sinz;
+    double y3 = x2 * sinz + y1 * cosz;
+
+    return Triple(x3, y3, z2);
+}
+
+Triple Triple::scale(Triple const &s) const { return Triple(x * s.x, y * s.y, z * s.z); }
+
+Triple Triple::translate(Triple const &t) const { return Triple(x + t.x, y + t.y, z + t.z); }
+
 // --- Color functions ---------------------------------------------------------
 
 void Triple::set(double f)
