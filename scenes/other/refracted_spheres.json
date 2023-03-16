@@ -1,0 +1,125 @@
+{
+"Eye": [200, 200, 1000],
+    "Shadows": false,
+    "MaxRecursionDepth": 10,"Lights": [
+        {
+            "position": [200, 200, 1000],
+            "color": [0.4, 0.4, 0.8]
+        },
+        {
+            "position": [700, 700, -400],
+            "color": [0.8, 0.8, 0.8]
+        },
+        {
+            "position": [700, -300, -400],
+            "color": [0.8, 0.8, 0.8]
+        },
+        {
+            "position": [-300, 700, -400],
+            "color": [0.8, 0.8, 0.8]
+        },
+        {
+            "position": [-300, -300, -400],
+            "color": [0.8, 0.8, 0.8]
+        }
+    ],
+    "Objects": [
+        {
+            "type": "sphere",
+            "comment": "Red sphere",
+            "position": [200, 200, 0],
+            "radius": 200,
+            "material":
+            {
+                "color": [1.0, 0.0, 0.0],
+                "ka": 0.2,
+                "kd": 0.7,
+                "ks": 0.0,
+                "n": 1,
+                "isTransparent": true,
+                "nt": 0.95
+            }
+        },
+        {
+            "type": "sphere",
+            "comment": "Green sphere",
+            "position": [50, 350, -400],
+            "radius": 125,
+            "material":
+            {
+                "color": [0.0, 1.0, 0.0],
+                "ka": 0.2,
+                "kd": 0.7,
+                "ks": 0.0,
+                "n": 1,
+                "isTransparent": true,
+                "nt": 0.85
+            }
+        },
+        {
+            "type": "sphere",
+            "comment": "Green sphere",
+            "position": [350, 350, -400],
+            "radius": 125,
+            "material":
+            {
+                "color": [0.0, 1.0, 0.0],
+                "ka": 0.2,
+                "kd": 0.7,
+                "ks": 0.0,
+                "n": 1,
+                "isTransparent": true,
+                "nt": 0.85
+            }
+        }
+        ,
+        {
+            "type": "sphere",
+            "comment": "Green sphere",
+            "position": [350, 50, -400],
+            "radius": 125,
+            "material":
+            {
+                "color": [0.0, 1.0, 0.0],
+                "ka": 0.2,
+                "kd": 0.7,
+                "ks": 0.0,
+                "n": 1,
+                "isTransparent": true,
+                "nt": 0.85
+            }
+        }
+        ,
+        {
+            "type": "sphere",
+            "comment": "Green sphere",
+            "position": [50, 50, -400],
+            "radius": 125,
+            "material":
+            {
+                "color": [0.0, 1.0, 0.0],
+                "ka": 0.2,
+                "kd": 0.7,
+                "ks": 0.0,
+                "n": 1,
+                "isTransparent": true,
+                "nt": 0.85
+            }
+        },
+        {
+            "type": "sphere",
+            "comment": "Blue sphere",
+            "position": [200, 200, -800],
+            "radius": 200,
+            "material":
+            {
+                "color": [0.0, 0.0, 1.0],
+                "ka": 0.2,
+                "kd": 0.7,
+                "ks": 0.0,
+                "n": 1,
+                "isTransparent": true,
+                "nt": 1.10
+            }
+        }
+    ]}

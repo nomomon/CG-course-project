@@ -1,0 +1,39 @@
+{
+"Eye": [200, 200, 1000],
+    "Shadows": true,
+    "MaxRecursionDepth": 1,"Lights": [
+        {
+            "position": [382.635074, 1393.715669, 7862.294015],
+            "color": [1.0, 1.0, 1.0]
+        }
+    ],
+    "Objects": [
+        {
+            "type": "sphere",
+            "comment": "Earth sphere",
+            "position": [200.000000, -250.000000, -2000.000000],
+            "radius": 1000,
+            "material":
+            {
+                "texture": "../textures/earthmap1k.png",
+                "ka": 0.2,
+                "kd": 0.8,
+                "ks": 0.0,
+                "n": 1
+            }
+        },
+        {
+            "type": "sphere",
+            "comment": "Moon sphere",
+            "position": [250.000000, 200.000000, 700.000000],
+            "radius": 50,
+            "material":
+            {
+                "color": [0.8, 0.8, 0.8],
+                "ka": 0.2,
+                "kd": 0.8,
+                "ks": 0.0,
+                "n": 1
+            }
+        }
+    ]}
