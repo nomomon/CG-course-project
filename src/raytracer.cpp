@@ -11,6 +11,8 @@
 
 #include "shapes/quad.h"
 #include "shapes/sphere.h"
+#include "shapes/triangle.h"
+#include "shapes/mesh.h"
 
 // =============================================================================
 // -- End of shape includes ----------------------------------------------------
@@ -56,6 +58,21 @@ bool Raytracer::parseObjectNode(json const &node)
         Point v2(node["v2"]);
         Point v3(node["v3"]);
         obj = ObjectPtr(new Quad(v0, v1, v2, v3));
+    }
+    else if (node["type"] == "triangle")
+    {
+        Point v0(node["v0"]);
+        Point v1(node["v1"]);
+        Point v2(node["v2"]);
+        obj = ObjectPtr(new Triangle(v0, v1, v2));
+    }
+    else if (node["type"] == "mesh")
+    {
+        string filename = node["filename"];
+        Point position(node["position"]);
+        Vector rotation(node["rotation"]);
+        Vector scale(node["scale"]);
+        obj = ObjectPtr(new Mesh(filename, position, rotation, scale));
     }
     else
     {
