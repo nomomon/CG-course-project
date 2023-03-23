@@ -14,6 +14,9 @@ class Image;
 
 class Scene
 {
+    unsigned width;
+    unsigned height;
+
     std::vector<ObjectPtr> objects;
     std::vector<LightPtr> lights;
     Point eye;
@@ -46,9 +49,13 @@ public:
     void setRenderShadows(bool renderShadows);
     void setRecursionDepth(unsigned depth);
     void setSuperSample(unsigned factor);
+    void setWidth(unsigned width);
+    void setHeight(unsigned height);
 
     unsigned getNumObject();
     unsigned getNumLights();
+    unsigned getWidth();
+    unsigned getHeight();
 };
 
 #endif

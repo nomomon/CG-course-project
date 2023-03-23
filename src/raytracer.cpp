@@ -147,6 +147,9 @@ try
     Point eye(jsonscene["Eye"]);
     scene.setEye(eye);
 
+    scene.setWidth(jsonscene["Width"]);
+    scene.setHeight(jsonscene["Height"]);
+
     if (jsonscene.count("MaxRecursionDepth"))
     {
         int depth = jsonscene["MaxRecursionDepth"];
@@ -195,8 +198,9 @@ catch (exception const &ex)
 
 void Raytracer::renderToFile(string const &ofname)
 {
-    // TODO: the size may be a settings in your file
-    Image img(400, 400);
+    // Render scene to image
+
+    Image img(scene.getWidth(), scene.getHeight());
     cout << "Tracing...\n";
     scene.render(img);
     cout << "Writing image to " << ofname << "...\n";

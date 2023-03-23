@@ -226,3 +226,11 @@ void Scene::setRenderShadows(bool shadows) { renderShadows = shadows; }
 void Scene::setRecursionDepth(unsigned depth) { recursionDepth = depth; }
 
 void Scene::setSuperSample(unsigned factor) { supersamplingFactor = factor; }
+
+void Scene::setWidth(unsigned width) { this->width = width; }
+
+void Scene::setHeight(unsigned height) { this->height = height; }
+
+unsigned Scene::getWidth() { return width; }
+
+unsigned Scene::getHeight() { return height; }
