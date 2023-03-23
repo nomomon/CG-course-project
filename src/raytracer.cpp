@@ -144,11 +144,14 @@ try
     // -- Read your scene data in this section -------------------------------------
     // =============================================================================
 
+    scene.setWidth(jsonscene["Width"]);
+    scene.setHeight(jsonscene["Height"]);
+
     Point eye(jsonscene["Eye"]);
     scene.setEye(eye);
 
-    scene.setWidth(jsonscene["Width"]);
-    scene.setHeight(jsonscene["Height"]);
+    Triple eyeRotation(jsonscene["EyeRotation"]);
+    scene.setEyeRotation(eyeRotation);
 
     if (jsonscene.count("MaxRecursionDepth"))
     {

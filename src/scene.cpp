@@ -193,6 +193,9 @@ void Scene::render(Image &img)
                         h - 1 - y + j / (supersamplingFactor + 1),
                         0);
                     Ray ray(eye, (pixel - eye).normalized());
+
+                    ray.D = ray.D.rotate(eyeRotation);
+
                     Color subcol = trace(ray, recursionDepth);
                     subcol.clamp();
 
@@ -209,7 +212,7 @@ void Scene::render(Image &img)
 // --- Misc functions ----------------------------------------------------------
 
 // Defaults
-Scene::Scene() : objects(), lights(), eye(), renderShadows(false), recursionDepth(0), supersamplingFactor(1) {}
+Scene::Scene() : objects(), lights(), eye(), renderShadows(false), recursionDepth(0), supersamplingFactor(1), width(200), height(200), eyeRotation(Triple(0, 0, 0)) {}
 
 void Scene::addObject(ObjectPtr obj) { objects.push_back(obj); }
 
@@ -234,3 +237,5 @@ void Scene::setHeight(unsigned height) { this->height = height; }
 unsigned Scene::getWidth() { return width; }
 
 unsigned Scene::getHeight() { return height; }
+
+void Scene::setEyeRotation(Triple const &rotation) { this->eyeRotation = rotation; }

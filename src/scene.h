@@ -20,6 +20,7 @@ class Scene
     std::vector<ObjectPtr> objects;
     std::vector<LightPtr> lights;
     Point eye;
+    Triple eyeRotation;
     bool renderShadows;
     unsigned recursionDepth;
     unsigned supersamplingFactor;
@@ -51,6 +52,7 @@ public:
     void setSuperSample(unsigned factor);
     void setWidth(unsigned width);
     void setHeight(unsigned height);
+    void setEyeRotation(Triple const &rotation);
 
     unsigned getNumObject();
     unsigned getNumLights();

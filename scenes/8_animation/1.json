@@ -9,6 +9,11 @@
         200,
         1000
     ],
+    "EyeRotation": [
+        0,
+        0.2,
+        0
+    ],
     "Lights": [
         {
             "position": [
