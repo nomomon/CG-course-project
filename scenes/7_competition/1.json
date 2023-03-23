@@ -1,4 +1,7 @@
 {
+    "Shadows": false,
+    "MaxRecursionDepth": 2,
+    "SuperSamplingFactor": 4,
     "Eye": [
         200,
         200,
@@ -7,9 +10,9 @@
     "Lights": [
         {
             "position": [
-                -200,
-                600,
-                1500
+                200,
+                200,
+                1000
             ],
             "color": [
                 1.0,
@@ -20,33 +23,76 @@
     ],
     "Objects": [
         {
-            "type": "mesh",
-            "filename": "models/wobbly.obj",
+            "type": "sphere",
+            "comment": "Transparent sphere",
             "position": [
                 200,
                 200,
                 100
             ],
+            "radius": 100,
             "rotation": [
                 0,
-                1.57,
-                0
+                1,
+                0.7
             ],
-            "scale": [
-                100.0,
-                100.0,
-                100.0
-            ],
+            "angle": 90,
             "material": {
                 "color": [
                     1.0,
-                    0.0,
-                    0.0
+                    1.0,
+                    1.0
                 ],
-                "ka": 0.3,
-                "kd": 0.7,
-                "ks": 0.5,
-                "n": 5
+                "ka": 0.0,
+                "kd": 0.0,
+                "ks": 0.0,
+                "n": 16,
+                "isTransparent": true,
+                "nt": 1.7
+            }
+        },
+        {
+            "type": "sphere",
+            "comment": "Camera sphere",
+            "position": [
+                200,
+                200,
+                1002
+            ],
+            "radius": 1,
+            "material": {
+                "color": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "ka": 1.0,
+                "kd": 0.0,
+                "ks": 0.0,
+                "n": 16
+            }
+        },
+        {
+            "type": "sphere",
+            "comment": "Background sphere",
+            "position": [
+                200,
+                200,
+                1000
+            ],
+            "radius": 100000,
+            "rotation": [
+                -1,
+                0,
+                0
+            ],
+            "angle": 90,
+            "material": {
+                "texture": "textures/farm.png",
+                "ka": 0.2,
+                "kd": 0.8,
+                "ks": 0,
+                "n": 1
             }
         }
     ]
