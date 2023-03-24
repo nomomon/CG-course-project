@@ -1,6 +1,6 @@
 {
-    "Width": 200,
-    "Height": 200,
+    "Width": 500,
+    "Height": 500,
     "Shadows": false,
     "MaxRecursionDepth": 0,
     "SuperSamplingFactor": 1,
@@ -11,7 +11,7 @@
     ],
     "EyeRotation": [
         0.0,
-        358.0,
+        -10.0,
         0.0
     ],
     "Lights": [
