@@ -1,1 +1,0 @@
-bash build.sh && ./build/ray scenes/7_competition/1.json out.png
