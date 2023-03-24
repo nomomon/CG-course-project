@@ -6,7 +6,6 @@
 
 class Wobbly : public Object
 {
-    double const PI = 3.14159265358979323846;
 
 public:
     Wobbly(Point const &pos, double radius, Vector const &axis = Vector(0.0, 1.0, 0.0), double angle = 0.0);
