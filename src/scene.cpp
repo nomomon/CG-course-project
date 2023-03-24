@@ -194,7 +194,8 @@ void Scene::render(Image &img)
                         0);
                     Ray ray(eye, (pixel - eye).normalized());
 
-                    ray.D = ray.D.rotate(eyeRotation);
+                    // rotate the ray according to the eye rotation
+                    ray.D = ray.D.rotate(eyeRotation * PI / 180.0);
 
                     Color subcol = trace(ray, recursionDepth);
                     subcol.clamp();
