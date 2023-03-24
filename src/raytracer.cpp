@@ -13,6 +13,7 @@
 #include "shapes/sphere.h"
 #include "shapes/triangle.h"
 #include "shapes/mesh.h"
+#include "shapes/wobbly.h"
 
 // =============================================================================
 // -- End of shape includes ----------------------------------------------------
@@ -73,6 +74,22 @@ bool Raytracer::parseObjectNode(json const &node)
         Vector rotation(node["rotation"]);
         Vector scale(node["scale"]);
         obj = ObjectPtr(new Mesh(filename, position, rotation, scale));
+    }
+    else if (node["type"] == "wobbly")
+    {
+        Point pos(node["position"]);
+        double radius = node["radius"];
+        if (node.count("rotation"))
+        {
+            // Create sphere with rotation
+            Vector rotation(node["rotation"]);
+            double angle = node["angle"];
+            obj = ObjectPtr(new Wobbly(pos, radius, rotation, angle));
+        }
+        else
+        {
+            obj = ObjectPtr(new Wobbly(pos, radius));
+        }
     }
     else
     {

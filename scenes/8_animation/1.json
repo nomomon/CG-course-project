@@ -10,9 +10,9 @@
         1000
     ],
     "EyeRotation": [
-        0,
-        0.2,
-        0
+        0.1,
+        0.1,
+        0.2
     ],
     "Lights": [
         {
@@ -30,32 +30,24 @@
     ],
     "Objects": [
         {
-            "type": "sphere",
-            "comment": "Transparent sphere",
+            "type": "wobbly",
+            "comment": "Wobbly",
             "position": [
                 200,
                 200,
                 100
             ],
-            "radius": 100,
-            "rotation": [
-                0,
-                1,
-                0.7
-            ],
-            "angle": 90,
+            "radius": 80,
             "material": {
                 "color": [
-                    1.0,
-                    1.0,
-                    1.0
+                    0.8,
+                    0.1,
+                    0.2
                 ],
-                "ka": 0.0,
-                "kd": 0.0,
+                "ka": 0.3,
+                "kd": 0.8,
                 "ks": 0.0,
-                "n": 16,
-                "isTransparent": true,
-                "nt": 1.7
+                "n": 16
             }
         },
         {
