@@ -176,9 +176,14 @@ void Scene::render(Image &img)
     unsigned w = img.width();
     unsigned h = img.height();
 
+    double eyeDistance = w / (2 * tan((FOV * M_PI / 180.) / 2));
+
+    Point eyeRel(w / 2, h / 2, eyeDistance);
+
     for (unsigned y = 0; y < h; ++y)
         for (unsigned x = 0; x < w; ++x)
         {
+
             // placeholder for the final color
             Color col(0.0, 0.0, 0.0);
 
@@ -187,20 +192,22 @@ void Scene::render(Image &img)
             {
                 for (double j = 1; j <= supersamplingFactor; j++)
                 {
-                    // shoot a ray through one of the pixels
                     Point pixel(
                         x + i / (supersamplingFactor + 1),
                         h - 1 - y + j / (supersamplingFactor + 1),
                         0);
-                    Ray ray(eye, (pixel - eye).normalized());
 
-                    // rotate the ray according to the eye rotation
-                    ray.D = ray.D.rotate(eyeRotation * PI / 180.0);
+                    Ray ray(eyeRel, (pixel - eyeRel).normalized());
+
+                    ray.O = ray.O + eye;
+
+                    ray.D = ray.D.rotateAroundAxis(eyeRotation.x, Triple(1, 0, 0));
+                    ray.D = ray.D.rotateAroundAxis(eyeRotation.y, Triple(0, 1, 0));
+                    ray.D = ray.D.rotateAroundAxis(eyeRotation.z, Triple(0, 0, 1));
 
                     Color subcol = trace(ray, recursionDepth);
-                    subcol.clamp();
 
-                    // add the color to the final color
+                    subcol.clamp();
                     col += subcol;
                 }
             }
@@ -213,7 +220,7 @@ void Scene::render(Image &img)
 // --- Misc functions ----------------------------------------------------------
 
 // Defaults
-Scene::Scene() : objects(), lights(), eye(), renderShadows(false), recursionDepth(0), supersamplingFactor(1), width(200), height(200), eyeRotation(Triple(0, 0, 0)) {}
+Scene::Scene() : width(200), height(200), objects(), lights(), eye(), eyeRotation(Triple(0, 0, 0)), FOV(200.), renderShadows(false), recursionDepth(0), supersamplingFactor(1) {}
 
 void Scene::addObject(ObjectPtr obj) { objects.push_back(obj); }
 
@@ -240,3 +247,5 @@ unsigned Scene::getWidth() { return width; }
 unsigned Scene::getHeight() { return height; }
 
 void Scene::setEyeRotation(Triple const &rotation) { this->eyeRotation = rotation; }
+
+void Scene::setFOV(double fov) { this->FOV = fov; }

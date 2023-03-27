@@ -21,6 +21,7 @@ class Scene
     std::vector<LightPtr> lights;
     Point eye;
     Triple eyeRotation;
+    double FOV;
     bool renderShadows;
     unsigned recursionDepth;
     unsigned supersamplingFactor;
@@ -53,6 +54,7 @@ public:
     void setWidth(unsigned width);
     void setHeight(unsigned height);
     void setEyeRotation(Triple const &rotation);
+    void setFOV(double fov);
 
     unsigned getNumObject();
     unsigned getNumLights();

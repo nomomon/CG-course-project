@@ -167,8 +167,17 @@ try
     Point eye(jsonscene["Eye"]);
     scene.setEye(eye);
 
-    Triple eyeRotation(jsonscene["EyeRotation"]);
-    scene.setEyeRotation(eyeRotation);
+    if (jsonscene.count("EyeRotation"))
+    {
+        Triple eyeRotation(jsonscene["EyeRotation"]);
+        scene.setEyeRotation(eyeRotation);
+    }
+
+    if (jsonscene.count("FOV"))
+    {
+        double fov = jsonscene["FOV"];
+        scene.setFOV(fov);
+    }
 
     if (jsonscene.count("MaxRecursionDepth"))
     {

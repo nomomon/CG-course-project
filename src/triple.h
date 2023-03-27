@@ -82,6 +82,8 @@ public:
     Triple scale(Triple const &s) const;
     Triple translate(Triple const &t) const;
 
+    Triple rotateAroundAxis(double angle, Triple const &axis) const;
+
     // --- Color functions ---------------------------------------------------------
 
     void set(double f);                  // set all values to f

@@ -5,6 +5,7 @@
 #include <iostream>
 
 #include "json/json.h"
+#include "quaternion.h"
 
 using namespace std;
 using json = nlohmann::json;
@@ -149,6 +150,22 @@ Triple Triple::rotate(Triple const &r) const
 Triple Triple::scale(Triple const &s) const { return Triple(x * s.x, y * s.y, z * s.z); }
 
 Triple Triple::translate(Triple const &t) const { return Triple(x + t.x, y + t.y, z + t.z); }
+
+Triple Triple::rotateAroundAxis(double angle, Triple const &axis) const
+{
+    // use quaternion to rotate the hit point
+    // (convert the angle to radians ;)
+    double halfAngle = (angle * M_PI / 180.0) / 2.0;
+    Quaternion axisN(0, axis.x, axis.y, axis.z);
+    Quaternion q = cos(-halfAngle) + axisN * sin(-halfAngle);
+    Quaternion qInv = cos(halfAngle) + axisN * sin(halfAngle);
+
+    Quaternion p(0, x, y, z);
+
+    Quaternion P = q * p * qInv;
+
+    return Triple(P.i, P.j, P.k);
+}
 
 // --- Color functions ---------------------------------------------------------
 
