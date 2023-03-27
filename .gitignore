@@ -1,5 +1,6 @@
 build
 .vscode
 
-scenes/8_animation/frames/*.png
+scenes/1_animation/frames/*.png
+scenes/2_animation/frames/*.png
 o.png
