@@ -122,5 +122,5 @@ for i in range(0, 360, 2):
     os.system(f"./build/ray scenes/8_animation/1.json scenes/8_animation/frames/{pad(i)}.png")
 
 # make the video
-os.system("rm out.mp4")
-os.system("ffmpeg -framerate 30 -pattern_type glob -i 'scenes/8_animation/frames/*.png' -c:v libx264 -pix_fmt yuv420p out.mp4")
+os.system("rm out.gif")
+os.system("ffmpeg -framerate 30 -pattern_type glob -i 'scenes/8_animation/frames/*.png' out.gif")

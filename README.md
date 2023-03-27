@@ -4,7 +4,23 @@ This is a C++ framework for a ray tracer. It was created for the Computing Scien
 
 This framework is inspired by and uses (some) code of the ray tracer framework of Bert Freudenberg which unfortunately is no longer available.
 
-<video src="out.mp4" loop></video>
+## New Features
+
+The following features have been added to the framework:
+
+- Width and height of the output image are setable
+- Shift and rotate the camera in 3d space
+- Changeable FOV of the camera
+
+Another feature we were eager about is the ability to render animations. For this we made a python script that changes the json config of the scene, run the framework and saves each frame. After that we used ffmpeg to create a gif from the frames.
+
+<p align="center">
+    <img src="out.gif" loop></img><br/>
+    <caption>
+        Animation of rotating in a pond around multiple transpanrent spheres.
+        Here we placed the light source in the place where the sun would be, giving the illusion of a sunset. Also, a 4k image was used for the background.
+    </caption>
+</p>
 
 ## Compiling the code
 
@@ -27,12 +43,12 @@ A simple build script has also been provided in `build.sh`.
 **Note!** After adding new `.cpp` files, `cmake ..` needs to be called again or you might get linker errors.
 
 ## Running the Ray tracer
-After compilation you should have the `ray` executable.
+After compilation you should have the `./build/ray` executable.
 This can be used like this:
 ```
-./ray <path to .json file> [output .png file]
+./build/ray <path to .json file> [output .png file]
 # when in the build directory:
-./ray ../scenes/other/scene01.json
+./build/ray ../scenes/other/scene01.json
 ```
 Specifying an output is optional and by default an image will be created in
 the same directory as the source scene file with the `.json` extension replaced
