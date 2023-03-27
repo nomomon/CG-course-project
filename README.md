@@ -41,7 +41,17 @@ A few interesting things we learned:
 
 - Shifting the camera and rotating it was a bit tricky. We used quatrenions to rotate the camera. We also had to change the ray direction to make it work.
 
-- We couldn't manage to place objects inside the glass spheres and make them look like they are inside. Our initial idea was to have marbles with colored glass inside, rather than just glass spheres. We suspect this is because of the way the light reflect off the object when it is inside the sphere.
+- We couldn't manage to place objects inside the glass spheres in time. Our initial idea was to have marbles with colored glass inside, rather than just glass spheres. We tried implementing it, similar to the sphere, by using a mathematical funciton of a spiral. 
+
+<p align="center">
+    <img src="./assets/wobbly.jpeg">
+</p>
+
+- We also played around with meshed and wanted to use crystal like balls. However, they had so many triangles (960) that it took too long to render.
+
+<p align="center">
+    <img src="./assets/crystal.jpeg">
+</p>
 
 ## Compiling the code
 
