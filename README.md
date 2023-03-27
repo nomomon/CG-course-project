@@ -4,6 +4,8 @@ This is a C++ framework for a ray tracer. It was created for the Computing Scien
 
 This framework is inspired by and uses (some) code of the ray tracer framework of Bert Freudenberg which unfortunately is no longer available.
 
+<video src="out.mp4" loop></video>
+
 ## Compiling the code
 
 We provided a [CMakeLists.txt](CMakeLists.txt) file to be used with `CMake`.
