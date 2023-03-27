@@ -16,6 +16,8 @@ Another feature we were eager about is the ability to render animations. For thi
 
 ## Examples
 
+(they take time to load)
+
 <p align="center">
     <img src="./scenes/1_animation/out.gif" loop></img><br/>
     <caption>
